@@ -1,0 +1,58 @@
+@use "../../utils/" as *;
+.wxproject {
+  &-img {
+    & img {
+      border-radius: 32px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(7, 4, 16, 0) 10%,
+        #070410 99%
+      );
+    }
+  }
+  &-content {
+    bottom: 28px;
+    left: 14px;
+    z-index: 3;
+    width: 80%;
+    & span {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--wx-white-color);
+      text-transform: capitalize;
+      display: block;
+    }
+  }
+  &-title {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--wx-white-color);
+    text-transform: capitalize;
+   
+  }
+  &-icon {
+    bottom: 26px;
+    right: 15px;
+    z-index: 7;
+    & a {
+      height: 28px;
+      width: 28px;
+      display: inline-block;
+      background: #f9f9f9;
+      text-align: center;
+      border-radius: 6px;
+      line-height: 25px;
+      & i{
+        transform: rotate(-30deg);
+      }
+    }
+  }
+}

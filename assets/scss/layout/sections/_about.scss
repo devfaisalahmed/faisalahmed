@@ -1,0 +1,48 @@
+@use "../../utils/" as *;
+.wxabout {
+  &-img {
+    & img {
+      border-radius: 32px;
+    }
+  }
+  &-fact {
+    &__number {
+      font-size: 52px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #9257f2 0%, #f31af7 100%);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+    &-item {
+      padding-right: 33px;
+      &:not(:last-child)::after {
+        position: absolute;
+        content: "";
+        top: 45%;
+        right: 0;
+        width: 1.5px;
+        height: 60px;
+        transform: translateY(-50%);
+        background: #2b2b2b;
+      }
+      & p {
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--wx-white-color);
+        margin-top: 13px;
+      }
+      @include down(lg) {
+        margin-right: 30px;
+      }
+      & br {
+        @include down(md) {
+          display: none;
+        }
+      }
+    }
+  }
+}

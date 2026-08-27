@@ -1,0 +1,41 @@
+@use "../../utils/" as *;
+
+.wxservices {
+  &-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--wx-white-color);
+    margin-bottom: 10px;
+    margin-top: 28px;
+    @include wx-transition(0.4s);
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+  &-card {
+    padding: 20px 24px;
+    padding-bottom: 0;
+    border: 1.5px solid #2b2b2b;
+    @include wx-transition(0.4s);
+    & p {
+      color: var(--wx-white-color);
+    }
+    @include down(md) {
+      text-align: center;
+    }
+  }
+  &-img {
+    & i {
+      height: 50px;
+      width: 50px;
+      background: var(--color-primary);
+      text-align: center;
+      line-height: 53px;
+      font-size: 24px;
+      border: r;
+      border-radius: 13px;
+      color: var(--wx-white-color);
+    }
+  }
+}

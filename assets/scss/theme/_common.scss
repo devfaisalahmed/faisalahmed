@@ -1,0 +1,65 @@
+@use "../utils/" as *;
+
+.w-img {
+  & img {
+    width: 100%;
+  }
+}
+.m-img {
+  & img {
+    max-width: 100%;
+  }
+}
+img {
+  max-width: 100%;
+}
+
+.fix {
+  overflow: hidden;
+}
+.clear {
+  clear: both;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+.z-index-2 {
+  z-index: 2;
+}
+.z-index-3 {
+  z-index: 3;
+}
+
+.z-index-11 {
+  z-index: 11;
+}
+.overflow-y-visible {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.overflow-x-visible {
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+.p-relative {
+  position: relative;
+}
+.p-absolute {
+  position: absolute;
+}
+
+.br {
+  &-12 {
+    border-radius: 12px;
+  }
+  &-32 {
+    border-radius: 32px;
+  }
+}
+.bg-vivid-purple {
+  background: var(--color-primary);
+}
+.bg-black{
+  background: var(--wx-black-color);
+}

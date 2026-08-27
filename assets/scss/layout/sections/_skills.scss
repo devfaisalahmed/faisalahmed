@@ -1,0 +1,20 @@
+@use "../../utils/" as *;
+.skills {
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    &-box {
+      width: 13%;
+      text-align: center;
+      background: rgb(146, 87, 242, 0.1);
+      padding: 29px 43px;
+      border-radius: 7px;
+      @include down(lg) {
+        width: inherit;
+      }
+    }
+  }
+}

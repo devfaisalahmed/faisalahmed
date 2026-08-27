@@ -1,0 +1,138 @@
+@use "../../utils/" as *;
+
+.wxheader {
+  &-area {
+    background: var(--wx-black-color);
+  }
+  &-wrapper {
+    padding: 12px 0;
+  }
+  &-nav {
+    & ul {
+      & li {
+        display: inline-block;
+        color: var(--wx-white-color);
+        & a {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1;
+          display: inline-block;
+          padding: 12px 10px;
+        }
+      }
+    }
+  }
+  &-toggle {
+    font-size: 25px;
+    color: #fff;
+    padding-left: 23px;
+  }
+}
+// offcanvas
+
+.wxoffcanvas {
+  &-wrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background: white;
+    width: 325px;
+    content: "";
+    padding: 50px 40px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    @include wx-transition();
+    @include wx-translateX(100%);
+    &-active {
+      opacity: 1;
+      visibility: visible;
+      @include wx-translateX(0%);
+    }
+  }
+  &-close {
+    &__button {
+      font-size: 27px;
+      color: var(--wx-black-color);
+    }
+  }
+  &-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: var(--wx-black-color);
+  }
+  &-info {
+    & span {
+      display: block;
+      margin: 3px 0;
+      color: var(--wx-black-color);
+      font-size: 18px;
+      font-weight: 760;
+      & a {
+        & i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &-overly {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 88;
+    opacity: 0;
+    @include wx-transition(0.2s);
+    @include wx-translateX(100%);
+    &-active {
+      opacity: 1;
+      width: 100%;
+      @include wx-translateX(0);
+    }
+  }
+  &-menu {
+    & ul {
+      list-style-type: none;
+      & li {
+        &:last-child {
+          & a {
+            border: none;
+          }
+        }
+        & a {
+          display: block;
+          padding: 7px 0;
+          font-size: 16px;
+          font-weight: 600;
+          border-bottom: 1px solid #ddd;
+        }
+      }
+    }
+  }
+  &-social {
+    & a {
+      height: 40px;
+      width: 40px;
+      font-size: 18px;
+      line-height: 32px;
+      border: 1px solid rgba(146, 87, 242, 0.15);
+      color: var(--wx-black-color);
+      padding: 5px;
+      border-radius: 50%;
+      display: inline-block;
+      text-align: center;
+      margin-right: 3px;
+    }
+  }
+  &-office-item {
+    & p {
+      color: var(--wx-black-color) !important;
+      font-weight: 600 !important;
+    }
+  }
+}

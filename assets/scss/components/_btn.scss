@@ -1,0 +1,27 @@
+@use "../utils/" as *;
+
+.wx-btn {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: var(--color-primary);
+  background: var(--wx-white-color);
+  padding: 12px 20px;
+  @include  wx-transition();
+  &-purple {
+    background: var(--color-primary);
+    color: var(--wx-white-color);
+  }
+  &-transparent {
+    background: transparent;
+    border: 1px solid var(--wx-white-color);
+    color: var(--wx-white-color);
+  }
+  &:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--wx-white-color);
+  }
+}

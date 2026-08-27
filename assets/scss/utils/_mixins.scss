@@ -1,0 +1,60 @@
+@mixin wx-transition($time: 0.3s) {
+  -webkit-transition: $time;
+  -o-transition: $time;
+  transition: $time;
+}
+
+// placeholder input
+@mixin wx-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Mixin for translateX
+@mixin wx-translateX($x ) {
+  -webkit-transform: translateX($x);
+  -moz-transform: translateX($x);
+  -ms-transform: translateX($x);
+  -o-transform: translateX($x);
+  transform: translateX($x);
+}
+
+// Margin & Padding Utilities
+@for $i from 2 through 26 {
+  $space: $i * 5;
+  .pt-#{$space} {
+    padding-top: #{$space}px;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}px;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}px;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}px;
+  }
+
+  .mt-#{$space} {
+    margin-top: #{$space}px;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}px;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}px;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}px;
+  }
+}

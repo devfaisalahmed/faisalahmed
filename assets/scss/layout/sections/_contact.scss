@@ -1,0 +1,52 @@
+@use "../../utils/" as *;
+
+.wxcontact {
+  &-box {
+    &__title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--wx-white-color);
+      &-black {
+        color: var(--wx-black-color);
+      }
+    }
+    &__info {
+      & a {
+        font-size: 16px;
+        display: inline-block;
+        color: var(--wx-white-color);
+        line-height: 1;
+        padding: 11px 20px;
+        border: 1px solid var(--wx-white-color);
+        border-radius: 12px;
+        margin-bottom: 10px;
+        & svg {
+          margin-right: 18px;
+        }
+        &:not(:last-child) {
+          margin-right: 27px;
+        }
+      }
+    }
+    @include down(md) {
+      margin-top: 45px;
+    }
+  }
+  &-office {
+    &-item {
+      margin-bottom: 18px;
+      & i {
+        font-size: 16px;
+        color: var(--color-primary);
+        margin-right: 14px;
+      }
+      & p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+        color: var(--wx-white-color);
+        margin: 0;
+      }
+    }
+  }
+}

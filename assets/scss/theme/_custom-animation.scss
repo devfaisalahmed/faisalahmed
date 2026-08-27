@@ -1,0 +1,58 @@
+@use "../utils/" as *;
+
+/* Common Animation Settings */
+.wow {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Bottom → Top */
+@keyframes wxFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(70px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.wx-fade-up {
+  animation-name: wxFadeUp;
+}
+
+/* Left → Right */
+@keyframes wxFadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.98);
+    
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.wx-fade-left {
+  animation-name: wxFadeLeft;
+}
+
+/* Right → Left */
+@keyframes wxFadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.wx-fade-right {
+  animation-name: wxFadeRight;
+}

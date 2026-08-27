@@ -1,0 +1,43 @@
+// Responsive Variables
+@use "sass:map";
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// responsive mixins
+// Min Width (Mobile First)
+@mixin up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// Max Width
+@mixin down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @media (max-width: ($value - 0.02px)) {
+      @content;
+    }
+  }
+}
+
+// Between Two Breakpoints
+@mixin between($min, $max) {
+  @if map-has-key($breakpoints, $min) and map-has-key($breakpoints, $max) {
+    $min-value: map-get($breakpoints, $min);
+    $max-value: map-get($breakpoints, $max);
+
+    @media (min-width: $min-value) and (max-width: ($max-value - 0.02px)) {
+      @content;
+    }
+  }
+}
